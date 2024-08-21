@@ -1,2 +1,2 @@
 # haystack-frontend-poc
-POC for frontend experiments includes Contentful Reactjs Graphql Microfrontend etc
+POC for frontend experiments includes NX Contentful Reactjs Graphql Microfrontend etc
