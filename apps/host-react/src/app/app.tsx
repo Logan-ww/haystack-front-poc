@@ -13,15 +13,23 @@ const RemoteHome = React.lazy(() => import('remote-home/Module'));
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <ul>
+      <ul
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          backgroundColor: '#EEEEEE',
+          padding:'1rem',
+          listStyleType:'none'
+        }}
+      >
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Host/Shell</Link>
         </li>
         <li>
-          <Link to="/remote-content-pages">RemoteContentPages</Link>
+          <Link to="/remote-home">Home Page</Link>
         </li>
         <li>
-          <Link to="/remote-home">RemoteHome</Link>
+          <Link to="/remote-content-pages">Content Page</Link>
         </li>
       </ul>
       <Routes>
