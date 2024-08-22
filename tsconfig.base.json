@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "remote-content-pages/Module": [
+        "apps/remote-content-pages/src/remote-entry.ts"
+      ],
+      "remote-home/Module": ["apps/remote-home/src/remote-entry.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
