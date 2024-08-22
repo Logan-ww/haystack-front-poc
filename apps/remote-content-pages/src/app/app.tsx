@@ -6,7 +6,7 @@ import NxWelcome from './nx-welcome';
 export function App() {
   return (
     <div>
-      <NxWelcome title="remote-content-pages" />
+      <NxWelcome title="Content Page" />
     </div>
   );
 }
