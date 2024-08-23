@@ -18,8 +18,8 @@ export function App() {
           display: 'flex',
           justifyContent: 'space-between',
           backgroundColor: '#EEEEEE',
-          padding:'1rem',
-          listStyleType:'none'
+          padding: '1rem',
+          listStyleType: 'none',
         }}
       >
         <li>

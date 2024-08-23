@@ -6,6 +6,15 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
+## Getting started
+
+pnpm i
+npm run start
+
+## Creating new micro app
+
+## Define boundary of each micro app/lib
+
 ## Finish your CI setup
 
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/46uZwMEbdd)
