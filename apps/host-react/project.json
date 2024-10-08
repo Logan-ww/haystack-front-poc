@@ -1,0 +1,87 @@
+{
+  "name": "host-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/host-react/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/host-react",
+        "index": "apps/host-react/src/index.html",
+        "baseHref": "/",
+        "main": "apps/host-react/src/main.ts",
+        "tsConfig": "apps/host-react/tsconfig.app.json",
+        "assets": [
+          "apps/host-react/src/favicon.ico",
+          "apps/host-react/src/assets"
+        ],
+        "styles": ["apps/host-react/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/host-react/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/host-react/src/environments/environment.ts",
+              "with": "apps/host-react/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/host-react/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "host-react:build",
+        "hmr": true,
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "host-react:build:development"
+        },
+        "production": {
+          "buildTarget": "host-react:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "host-react:build",
+        "watch": false,
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "host-react:build:development"
+        },
+        "production": {
+          "buildTarget": "host-react:build:production"
+        }
+      }
+    }
+  }
+}

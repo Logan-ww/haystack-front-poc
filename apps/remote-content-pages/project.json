@@ -1,0 +1,87 @@
+{
+  "name": "remote-content-pages",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/remote-content-pages/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/remote-content-pages",
+        "index": "apps/remote-content-pages/src/index.html",
+        "baseHref": "/",
+        "main": "apps/remote-content-pages/src/main.ts",
+        "tsConfig": "apps/remote-content-pages/tsconfig.app.json",
+        "assets": [
+          "apps/remote-content-pages/src/favicon.ico",
+          "apps/remote-content-pages/src/assets"
+        ],
+        "styles": ["apps/remote-content-pages/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/remote-content-pages/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/remote-content-pages/src/environments/environment.ts",
+              "with": "apps/remote-content-pages/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/remote-content-pages/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "remote-content-pages:build",
+        "hmr": true,
+        "port": 3001
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "remote-content-pages:build:development"
+        },
+        "production": {
+          "buildTarget": "remote-content-pages:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "remote-content-pages:build",
+        "watch": false,
+        "port": 3001
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "remote-content-pages:build:development"
+        },
+        "production": {
+          "buildTarget": "remote-content-pages:build:production"
+        }
+      }
+    }
+  }
+}
