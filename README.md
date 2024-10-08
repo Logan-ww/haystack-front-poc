@@ -8,8 +8,9 @@
 
 ## Getting started
 
-pnpm i
-npm run start
+`pnpm i`
+
+`pnpm start`
 
 ## Creating new micro app
 

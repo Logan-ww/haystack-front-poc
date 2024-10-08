@@ -1,7 +1,8 @@
-import { composePlugins, withNx } from '@nx/webpack';
-import { withReact } from '@nx/react';
-import { withModuleFederation } from '@nx/react/module-federation';
-import { ModuleFederationConfig } from '@nx/webpack';
+import { composePlugins, withNx, withReact } from '@nx/rspack';
+import {
+  ModuleFederationConfig,
+  withModuleFederation,
+} from '@nx/rspack/module-federation';
 
 import baseConfig from './module-federation.config';
 
@@ -27,7 +28,7 @@ const prodConfig: ModuleFederationConfig = {
   remotes: [],
 };
 
-// Nx plugins for webpack to build config object from Nx options and context.
+// Nx plugins for rspack to build config object from Nx options and context.
 /**
  * DTS Plugin is disabled in Nx Workspaces as Nx already provides Typing support for Module Federation
  * The DTS Plugin can be enabled by setting dts: true
