@@ -10,6 +10,8 @@ const Cart = React.lazy(() => import('cart/Module'));
 
 const About = React.lazy(() => import('about/Module'));
 
+const ShopCopy = React.lazy(() => import('shop/ModuleCopy'));
+
 export function App() {
   return (
     <React.Suspense fallback={null}>
@@ -20,6 +22,10 @@ export function App() {
 
         <li>
           <Link to="/shop">Shop</Link>
+        </li>
+
+        <li>
+          <Link to="/shopcopy">ShopCopy</Link>
         </li>
 
         <li>
@@ -34,6 +40,8 @@ export function App() {
         <Route path="/" element={<NxWelcome title="host" />} />
 
         <Route path="/shop" element={<Shop />} />
+
+        <Route path="/shopcopy" element={<ShopCopy />} />
 
         <Route path="/cart" element={<Cart />} />
 

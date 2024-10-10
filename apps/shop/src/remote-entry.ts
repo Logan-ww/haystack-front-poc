@@ -1,4 +1,4 @@
-export { default } from './app/app';
+import App from './app/app';
 // import {createRoot} from 'react-dom/client';
 // import { } from "react-router"
 // import { createMemoryHistory, createBrowserHistory, BrowserHistory, MemoryHistory, Listener } from 'history';
@@ -48,4 +48,4 @@ export { default } from './app/app';
 
 // // We are running through container
 // // and we should export the mount function
-// export { mount };
+export default App;
