@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      history:
+        specifier: ^5.3.0
+        version: 5.3.0
       react:
         specifier: 18.3.1
         version: 18.3.1
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
+      react-router:
+        specifier: ^6.26.2
+        version: 6.26.2(react@18.3.1)
       react-router-dom:
         specifier: 6.11.2
         version: 6.11.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1557,6 +1563,10 @@ packages:
 
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha1-1F4BxKVvFD7mnFTdaxLq3p4nCnM=}
+
+  '@remix-run/router@1.19.2':
+    resolution: {integrity: sha1-DIllNUcykctB8VLBgL7dVoCjsnM=}
+    engines: {node: '>=14.0.0'}
 
   '@remix-run/router@1.6.2':
     resolution: {integrity: sha1-u+dfjFngtwd1hJIM4sx2+PNUk00=}
@@ -3539,6 +3549,9 @@ packages:
     resolution: {integrity: sha1-hK5l+n6vsWX922FWauFLrwVmTw8=}
     hasBin: true
 
+  history@5.3.0:
+    resolution: {integrity: sha1-FUirqiRbpHmS8GOgeD25HvIBxzs=}
+
   homedir-polyfill@1.0.3:
     resolution: {integrity: sha1-dDKYzvTlrz4ZQWH7rcwhUdOgWOg=}
     engines: {node: '>=0.10.0'}
@@ -4809,6 +4822,12 @@ packages:
   react-router@6.11.2:
     resolution: {integrity: sha1-AGMBxNoaFz1612t+zS2gG53Tg3o=}
     engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+
+  react-router@6.26.2:
+    resolution: {integrity: sha1-LwpomZFolUQxzcKd02zsO2+kSn4=}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
 
@@ -7723,6 +7742,8 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
+  '@remix-run/router@1.19.2': {}
+
   '@remix-run/router@1.6.2': {}
 
   '@rspack/binding-darwin-arm64@1.0.5':
@@ -10041,6 +10062,10 @@ snapshots:
 
   he@1.2.0: {}
 
+  history@5.3.0:
+    dependencies:
+      '@babel/runtime': 7.25.7
+
   homedir-polyfill@1.0.3:
     dependencies:
       parse-passwd: 1.0.0
@@ -11548,6 +11573,11 @@ snapshots:
   react-router@6.11.2(react@18.3.1):
     dependencies:
       '@remix-run/router': 1.6.2
+      react: 18.3.1
+
+  react-router@6.26.2(react@18.3.1):
+    dependencies:
+      '@remix-run/router': 1.19.2
       react: 18.3.1
 
   react@18.3.1:
