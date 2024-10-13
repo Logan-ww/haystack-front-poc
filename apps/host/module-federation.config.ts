@@ -15,6 +15,8 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: ['shop', 'cart', 'about'],
+  additionalShared: ['react', 'react-dom'],
+  // remotes: [['cart', 'http://localhost:4202']],
 };
 
 export default config;
