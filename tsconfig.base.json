@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fdc-frontend/event-bus": ["packages/event-bus/src/index.ts"],
       "remote-content-pages/Module": [
         "apps/remote-content-pages/src/remote-entry.ts"
       ],

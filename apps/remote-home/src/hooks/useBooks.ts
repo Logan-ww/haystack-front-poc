@@ -3,6 +3,8 @@ import { gql } from '../__generated__';
 import { useEffect } from 'react';
 import { Book } from '../__generated__/graphql';
 
+import { emitter } from '@fdc-frontend/event-bus';
+
 const GET_BOOKS = gql(`
   query GetBooks {
     books {
@@ -13,7 +15,7 @@ const GET_BOOKS = gql(`
 `);
 
 export const useBooks = () => {
-  const result = useQuery(GET_BOOKS);
+  const result = useQuery<{ books: Book[] }>(GET_BOOKS);
 
   const handleAddBook = () => {
     result.client.writeQuery({
@@ -29,7 +31,11 @@ export const useBooks = () => {
       },
     });
   };
-  useEffect(() => {}, [result]);
+  useEffect(() => {
+    if (result.data && !result.loading) {
+      emitter.emit('REMOTE_HOME_GET_BOOKS', result.data.books);
+    }
+  }, [result]);
 
   return { ...result, handleAddBook };
 };
