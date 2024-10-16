@@ -1,0 +1,1 @@
+"pnpm dev" to start the local application
