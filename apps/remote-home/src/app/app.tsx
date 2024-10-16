@@ -1,13 +1,20 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { Books } from './books';
+import { UpdatedBooks } from './books-updated';
 
-import NxWelcome from './nx-welcome';
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+  cache: new InMemoryCache(),
+});
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="Home Page" />
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <Books title="Remote Home" />
+        <UpdatedBooks />
+      </div>
+    </ApolloProvider>
   );
 }
 
