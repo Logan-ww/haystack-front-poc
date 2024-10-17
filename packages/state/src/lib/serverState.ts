@@ -1,6 +1,5 @@
-import { ApolloClient, InMemoryCache, makeVar, useQuery } from '@apollo/client';
+import { ApolloClient, InMemoryCache, makeVar } from '@apollo/client';
 import { gql } from '../__generated__';
-import { useEffect, useState } from 'react';
 import { User } from '../__generated__/graphql';
 
 const client = new ApolloClient({
