@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client';
-import { gql } from '../__generated__';
+import { gql } from '@fdc-frontend/state';
 import { useEffect } from 'react';
-import { Book } from '../__generated__/graphql';
 
 import { emitter } from '@fdc-frontend/event-bus';
 

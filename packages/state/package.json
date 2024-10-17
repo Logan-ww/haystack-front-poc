@@ -2,5 +2,9 @@
   "name": "@fdc-frontend/state",
   "version": "0.0.1",
   "dependencies": {},
-  "private": true
+  "private": true,
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "codegen:watch": "graphql-codegen -w"
+  }
 }

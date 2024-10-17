@@ -4,9 +4,8 @@ import NxWelcome from './nx-welcome';
 
 import { Link, Route, Routes } from 'react-router-dom';
 import { emitter } from '@fdc-frontend/event-bus';
-import { Book } from 'apps/remote-home/src/__generated__/graphql';
 import { Settings } from 'apps/remote-content-pages/src/app/hooks/useSettings';
-import { appSettingsVar } from '@fdc-frontend/state';
+import { appSettingsVar, Book, userVar } from '@fdc-frontend/state';
 import { useReactiveVar } from '@apollo/client';
 
 const RemoteContentPages = React.lazy(
@@ -21,6 +20,7 @@ export function App() {
 
   const appSettings = useReactiveVar(appSettingsVar);
 
+  const user = useReactiveVar(userVar);
   React.useEffect(() => {
     emitter.on('REMOTE_HOME_GET_BOOKS', (books) => {
       setBooks(books);
@@ -56,6 +56,11 @@ export function App() {
               </p>
             </li>
           )}
+          <li>
+            <p>
+              <b>User: </b> {user?.name}
+            </p>
+          </li>
           <li>
             <Link to="/">Host/Shell</Link>
           </li>

@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently --kill-others \"nx serve host-react\" \"nx serve remote-home\" \"nx serve remote-content-pages\"",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "codegen": "graphql-codegen",
+    "codegen:watch": "graphql-codegen -w"
   },
   "private": true,
   "dependencies": {
