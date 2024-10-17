@@ -11,8 +11,6 @@ const settingsVar = makeVar<Settings>({
   displayBook: true,
 });
 
-emitter.emit('REMOTE_CONTENT_SETTINGS_VAR', settingsVar);
-
 export const useSettings = () => {
   const settings = useReactiveVar(settingsVar);
 

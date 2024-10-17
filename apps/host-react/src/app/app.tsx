@@ -21,6 +21,7 @@ export function App() {
   const appSettings = useReactiveVar(appSettingsVar);
 
   const user = useReactiveVar(userVar);
+
   React.useEffect(() => {
     emitter.on('REMOTE_HOME_GET_BOOKS', (books) => {
       setBooks(books);
