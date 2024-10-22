@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout";
 import { app1RoutingPrefix, app2RoutingPrefix } from "./constants";
 
 const App1Lazy = lazy(() => import("../components/App1"));
-// const App2Lazy = lazy(() => import("../components/App2"));
+const App2Lazy = lazy(() => import("../components/App2"));
 
 export const routes: RouteObject[] = [
   {
@@ -17,12 +17,12 @@ export const routes: RouteObject[] = [
       },
       {
         path: `/${app1RoutingPrefix}/*`,
-        element: <Suspense fallback="Loading App1..."><App1Lazy /></Suspense>,
+        element: <Suspense fallback="Loading Cart..."><App1Lazy /></Suspense>,
       },
-      // {
-      //   path: `/${app2RoutingPrefix}/*`,
-      //   element: <Suspense fallback="Loading App2..."><App2Lazy /></Suspense>,
-      // },
+      {
+        path: `/${app2RoutingPrefix}/*`,
+        element: <Suspense fallback="Loading About..."><App2Lazy /></Suspense>,
+      },
     ],
   }
 ];
