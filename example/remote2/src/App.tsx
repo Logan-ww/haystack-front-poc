@@ -10,46 +10,43 @@ import {
   createHashRouter,
   createMemoryRouter,
 } from 'react-router-dom';
+
 import './App.css';
-import styled from '@emotion/styled';
-
-import {
-  StyleProvider,
-  legacyLogicalPropertiesTransformer,
-} from '@ant-design/cssinjs';
-
-const HomeDiv = styled.div`
-  color: turquoise;
-  h2: {
-    color: red;
-  }
-`;
-
-
-const DetailDev = styled.div`
-  color: green;
-`;
+import Style from './App.css.json';
 
 function Home() {
+
   return (
-    <HomeDiv>
-      <h2>Remote2 home page</h2>
+    <div className={Style.content}>
+      <h1 >Remote2 home page</h1>
       <div>hello sub home page</div>
       <div>React router v6 + React 18</div>
-    </HomeDiv>
+    </div>
   );
 }
 
+// import styles from './App.module.css';
+// function Home() {
+
+//   return (
+//     <div className={styles.content}>
+//       <h1 >Remote2 home page</h1>
+//       <div>hello sub home page</div>
+//       <div>React router v6 + React 18</div>
+//     </div>
+//   );
+// }
+
 function Detail() {
   return (
-    <DetailDev>
+    <>
       <h2>Remote2 detail page</h2>
       <div>hello sub2 detail page</div>
       <Image
         width={200}
         src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp"
       />
-    </DetailDev>
+    </>
   );
 }
 
@@ -93,13 +90,7 @@ const router = createBrowserRouter([
 const App = (info?: { basename?: string; initialEntries?: Array<string>, containerApp?: ShadowRoot }) => {
   const container = info?.containerApp ?? info?.containerApp;
   return (
-    <StyleProvider
-      container={container}
-      hashPriority="high"
-      transformers={[legacyLogicalPropertiesTransformer]}
-    >
-      <RouterProvider router={router} />
-    </StyleProvider>
+    <RouterProvider router={router} />
   );
 };
 export default App;
