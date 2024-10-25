@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently --kill-others \"nx serve host-react\" \"nx serve remote-home\" \"nx serve remote-content-pages\"",
+    "start": "nx run-many --target=serve --all",
     "preinstall": "npx only-allow pnpm",
     "codegen": "graphql-codegen",
     "codegen:watch": "graphql-codegen -w"

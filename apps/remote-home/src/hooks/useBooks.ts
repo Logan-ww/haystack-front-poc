@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { gql } from '@fdc-frontend/state';
+import { Book, gql } from '@fdc-frontend/state';
 import { useEffect } from 'react';
 
 import { emitter } from '@fdc-frontend/event-bus';
@@ -30,6 +30,7 @@ export const useBooks = () => {
       },
     });
   };
+
   useEffect(() => {
     if (result.data && !result.loading) {
       emitter.emit('REMOTE_HOME_GET_BOOKS', result.data.books);

@@ -69,13 +69,16 @@ export function App() {
             <Link to="/remote-home">Home Page</Link>
           </li>
           <li>
-            <Link to="/remote-content-pages">Content Page</Link>
+            <Link to="/remote-content-pages/test">Content Page</Link>
           </li>
         </ul>
       )}
       <Routes>
         <Route path="/" element={<NxWelcome title="host-react" />} />
-        <Route path="/remote-content-pages" element={<RemoteContentPages />} />
+        <Route
+          path="/remote-content-pages/*"
+          element={<RemoteContentPages />}
+        />
         <Route path="/remote-home" element={<RemoteHome />} />
       </Routes>
     </React.Suspense>
