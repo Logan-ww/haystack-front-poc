@@ -18,6 +18,18 @@ const GET_USER = gql(`
 
 export const userVar = makeVar<User | null>(null);
 
+export const login = () => {
+  // Make a server side call and set user object
+  client.query({ query: GET_USER }).then(({ data }) => {
+    userVar(data.user);
+  });
+};
+
 client.query({ query: GET_USER }).then(({ data }) => {
   userVar(data.user);
 });
+
+export const logout = () => {
+  // Make a server side call and reset user object
+  userVar(null);
+};

@@ -5,7 +5,13 @@ import NxWelcome from './nx-welcome';
 import { Link, Route, Routes } from 'react-router-dom';
 import { emitter } from '@fdc-frontend/event-bus';
 import { Settings } from 'apps/remote-content-pages/src/app/hooks/useSettings';
-import { appSettingsVar, Book, userVar } from '@fdc-frontend/state';
+import {
+  appSettingsVar,
+  Book,
+  login,
+  logout,
+  userVar,
+} from '@fdc-frontend/state';
 import { useReactiveVar } from '@apollo/client';
 
 const RemoteContentPages = React.lazy(
@@ -50,6 +56,15 @@ export function App() {
             listStyleType: 'none',
           }}
         >
+          {!user && <button onClick={() => login()}> Login</button>}
+          {user && (
+            <li>
+              <p>
+                <b>User: </b> {user?.name}
+                <button onClick={() => logout()}> Logout</button>
+              </p>
+            </li>
+          )}
           {settings?.displayBook && (
             <li>
               <p>
@@ -57,11 +72,6 @@ export function App() {
               </p>
             </li>
           )}
-          <li>
-            <p>
-              <b>User: </b> {user?.name}
-            </p>
-          </li>
           <li>
             <Link to="/">Host/Shell</Link>
           </li>
