@@ -7,6 +7,7 @@ import {
 import { Books } from './books';
 import { UpdatedBooks } from './books-updated';
 import { userVar } from '@fdc-frontend/state';
+import { StateWrapper } from '@fdc-frontend/ui';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -25,10 +26,25 @@ export function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Books title="Remote Home" />
-        <UpdatedBooks />
+        <h1>Home Microfrontend 👋</h1>
+
+        <p>
+          <h2>Books Component</h2>
+          <StateWrapper state="Home">
+            <Books />
+          </StateWrapper>
+        </p>
+        <h2>Updated Books Component</h2>
+        <StateWrapper state="Home">
+          <UpdatedBooks />
+        </StateWrapper>
+
+        <p style={{ width: 200 }}>
+          <StateWrapper state="Shared">
+            <p>User: {user?.name}</p>
+          </StateWrapper>
+        </p>
         <button onClick={handleChangeUser}>Change User</button>
-        <p>User: {user?.name}</p>
       </div>
     </ApolloProvider>
   );

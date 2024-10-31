@@ -44,7 +44,7 @@ const Test = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <NxWelcome title="Content Page" />
+      <NxWelcome title="Content Microfrontend" />
       <Settings />
       <Outlet />
       <br />

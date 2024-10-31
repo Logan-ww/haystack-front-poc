@@ -17,6 +17,7 @@
     "paths": {
       "@fdc-frontend/event-bus": ["packages/event-bus/src/index.ts"],
       "@fdc-frontend/state": ["packages/state/src/index.ts"],
+      "@fdc-frontend/ui": ["packages/ui/src/index.ts"],
       "remote-content-pages/Module": [
         "apps/remote-content-pages/src/remote-entry.ts"
       ],

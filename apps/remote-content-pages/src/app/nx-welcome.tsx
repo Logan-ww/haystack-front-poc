@@ -17,10 +17,7 @@ export function NxWelcome({ title }: { title: string }) {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
-            <h1>
-              <span> Hello there, </span>
-              Welcome to {title} 👋
-            </h1>
+            <h1>{title} 👋</h1>
             <button onClick={() => settingsVar({ displayBook: !displayBook })}>
               Toggle display book
             </button>

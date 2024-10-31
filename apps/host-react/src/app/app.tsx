@@ -13,6 +13,7 @@ import {
   userVar,
 } from '@fdc-frontend/state';
 import { useReactiveVar } from '@apollo/client';
+import { StateWrapper } from '@fdc-frontend/ui';
 
 const RemoteContentPages = React.lazy(
   () => import('remote-content-pages/Module')
@@ -60,16 +61,21 @@ export function App() {
           {user && (
             <li>
               <p>
-                <b>User: </b> {user?.name}
-                <button onClick={() => logout()}> Logout</button>
+                <StateWrapper state="Shared">
+                  <b>User: </b> {user?.name}
+                  <button onClick={() => logout()}> Logout</button>
+                </StateWrapper>
               </p>
             </li>
           )}
           {settings?.displayBook && (
             <li>
-              <p>
-                <b>Book {books.length}: </b> {books?.[books.length - 1]?.title}
-              </p>
+              <StateWrapper state="Home">
+                <p>
+                  <b>Book {books.length}: </b>{' '}
+                  {books?.[books.length - 1]?.title}
+                </p>
+              </StateWrapper>
             </li>
           )}
           <li>
@@ -84,13 +90,33 @@ export function App() {
         </ul>
       )}
       <Routes>
-        <Route path="/" element={<NxWelcome title="host-react" />} />
+        <Route path="/" element={<NxWelcome title="Shell Application" />} />
         <Route
           path="/remote-content-pages/*"
           element={<RemoteContentPages />}
         />
         <Route path="/remote-home" element={<RemoteHome />} />
       </Routes>
+
+      <div
+        style={{
+          marginTop: 30,
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+        }}
+      >
+        <h2>State color reference</h2>
+        <p>
+          <StateWrapper state="Shared">Shared</StateWrapper>
+        </p>
+        <p>
+          <StateWrapper state="Home">Home</StateWrapper>
+        </p>
+        <p>
+          <StateWrapper state="Content">Content</StateWrapper>
+        </p>
+      </div>
     </React.Suspense>
   );
 }

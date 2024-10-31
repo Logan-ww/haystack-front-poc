@@ -12,7 +12,6 @@ export const UpdatedBooks = () => {
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
-            <h1>Updated Books</h1>
             <ul>
               {data?.books?.map((book, index) => (
                 <li key={index}>
