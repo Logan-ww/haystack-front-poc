@@ -7,6 +7,7 @@ import { emitter } from '@fdc-frontend/event-bus';
 import { Settings } from 'apps/remote-content-pages/src/app/hooks/useSettings';
 import { appSettingsVar, Book, userVar } from '@fdc-frontend/state';
 import { useReactiveVar } from '@apollo/client';
+import * as styles from './app.module.scss';
 
 const RemoteContentPages = React.lazy(
   () => import('remote-content-pages/Module')
@@ -58,7 +59,7 @@ export function App() {
             </li>
           )}
           <li>
-            <p>
+            <p className={styles.component}>
               <b>User: </b> {user?.name}
             </p>
           </li>

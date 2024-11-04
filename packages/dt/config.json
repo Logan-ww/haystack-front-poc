@@ -1,0 +1,43 @@
+{
+  "source": ["packages/dt/src/tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "packages/dt/src/build/css/",
+      "option": {
+        "selector": "dt"
+      },
+      "files": [
+        {
+          "destination": "_variables.css",
+          "format": "css/variables"
+        }
+      ]
+    },
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "packages/dt/src/build/css/",
+      "prefix": "dt",
+      "option": {
+        "outputReferences": true,
+        "themeable": true
+      },
+      "files": [
+        {
+          "destination": "variables.scss",
+          "format": "scss/variables"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "js",
+      "buildPath": "packages/dt/src/build/js/",
+      "files": [
+        {
+          "destination": "variables.js",
+          "format": "javascript/es6"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+/* Your styles goes here. */
+@import '../../../../packages/dt/src/build/css/variables.scss';
+
+.component {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: $dt-size-padding-xl;
+    color: $dt-color-background-success;
+}
