@@ -1,5 +1,6 @@
 /* Your styles goes here. */
 @import '../../../../packages/dt/src/build/css/variables.scss';
+@import '@woolworthslimited/core-tokens/dist/woolworths/scss/tokens.vars.scss';
 
 .component {
     display: flex;
@@ -7,4 +8,8 @@
     flex-direction: row;
     padding: $dt-size-padding-xl;
     color: $dt-color-background-success;
+}
+
+.username {
+    background-color: $color-alert-link-error-default;
 }

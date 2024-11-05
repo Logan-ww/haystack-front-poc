@@ -60,7 +60,7 @@ export function App() {
           )}
           <li>
             <p className={styles.component}>
-              <b>User: </b> {user?.name}
+              <b className={styles.username}>User: </b> {user?.name}
             </p>
           </li>
           <li>

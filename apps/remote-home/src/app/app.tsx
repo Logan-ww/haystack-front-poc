@@ -7,6 +7,7 @@ import {
 import { Books } from './books';
 import { UpdatedBooks } from './books-updated';
 import { userVar } from '@fdc-frontend/state';
+import {Helmet} from "react-helmet";
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
@@ -30,6 +31,13 @@ export function App() {
         <button onClick={handleChangeUser}>Change User</button>
         <p>User: {user?.name}</p>
       </div>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>remote home page title</title>
+          <meta name="description" content="remote home page description" />
+          <meta name="keywords" content="remote, home" />
+          <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
     </ApolloProvider>
   );
 }
