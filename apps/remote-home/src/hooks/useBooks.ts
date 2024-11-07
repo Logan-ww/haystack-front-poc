@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { emitter } from '@fdc-frontend/event-bus';
 
-const GET_BOOKS = gql(`
+export const GET_BOOKS = gql(`
   query GetBooks {
     books {
       title

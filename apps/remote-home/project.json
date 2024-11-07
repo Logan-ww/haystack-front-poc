@@ -82,6 +82,13 @@
           "buildTarget": "remote-home:build:production"
         }
       }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/remote-home/jest.config.ts",
+        "codeCoverage": true
+      }
     }
   }
 }
