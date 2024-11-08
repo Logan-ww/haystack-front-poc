@@ -82,6 +82,13 @@
           "buildTarget": "remote-content-pages:build:production"
         }
       }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/remote-content-pages/jest.config.ts",
+        "codeCoverage": true
+      }
     }
   }
 }

@@ -1,7 +1,8 @@
 export default {
-  displayName: 'host-react',
+  displayName: 'state',
   preset: '../../jest.preset.js',
-  coverageDirectory: '../../coverage/apps/host-react',
+  coverageDirectory: '../../coverage/packages/state',
+  collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/react/babel'] }],
