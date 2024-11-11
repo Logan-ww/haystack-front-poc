@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-recommended", "stylelint-config-standard-scss"],
+  "rules": {
+    "no-duplicate-selectors": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
+  }
+}

@@ -12,6 +12,9 @@ const RemoteContentPages = React.lazy(
   () => import('remote-content-pages/Module')
 );
 
+// const bbc = ''
+// const ccc = ''
+
 const RemoteHome = React.lazy(() => import('remote-home/Module'));
 
 export function App() {
