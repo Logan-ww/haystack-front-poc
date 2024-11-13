@@ -22,7 +22,11 @@ export const Books: React.FC<BooksProps> = ({ hideButton }) => {
                 </li>
               ))}
             </ul>
-            {!hideButton && <button onClick={handleAddBook}>Add book</button>}
+            {!hideButton && (
+              <button type="button" onClick={handleAddBook}>
+                Add book
+              </button>
+            )}
           </div>
         </div>
       </div>
