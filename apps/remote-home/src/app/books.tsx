@@ -1,6 +1,10 @@
 import { useBooks } from '../hooks/useBooks';
 
-export const Books = () => {
+type BooksProps = {
+  hideButton?: boolean;
+};
+
+export const Books: React.FC<BooksProps> = ({ hideButton }) => {
   const { loading, error, data, handleAddBook } = useBooks();
 
   if (loading) return <p>Loading...</p>;
@@ -18,7 +22,7 @@ export const Books = () => {
                 </li>
               ))}
             </ul>
-            <button onClick={handleAddBook}>Add book</button>
+            {!hideButton && <button onClick={handleAddBook}>Add book</button>}
           </div>
         </div>
       </div>

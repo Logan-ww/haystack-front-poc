@@ -26,7 +26,7 @@ export function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <h1>Home Microfrontend 👋</h1>
+        <h1>Home Microfrontend this is changed 👋</h1>
 
         <p>
           <h2>Books Component</h2>
@@ -34,7 +34,7 @@ export function App() {
             <Books />
           </StateWrapper>
         </p>
-        <h2>Updated Books Component</h2>
+        <h2 style={{ margin: 20 }}>Updated Books Component</h2>
         <StateWrapper state="Home">
           <UpdatedBooks />
         </StateWrapper>
