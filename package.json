@@ -82,6 +82,7 @@
     "jest-environment-node": "^29.7.0",
     "mitt": "^3.0.1",
     "nx": "20.0.1",
+    "nyc": "^17.1.0",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
     "storybook": "^8.2.8",
