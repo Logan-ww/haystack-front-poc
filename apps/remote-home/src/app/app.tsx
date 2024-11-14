@@ -45,6 +45,7 @@ export function App() {
           </StateWrapper>
         </p>
         <button onClick={handleChangeUser}>Change User</button>
+        <img src="https://via.placeholder.com/150" alt="" />
       </div>
     </ApolloProvider>
   );
